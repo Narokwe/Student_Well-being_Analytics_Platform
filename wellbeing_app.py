@@ -97,7 +97,7 @@ with tab1:
     
     # Time series analysis
     time_df = filtered_df.set_index('survey_date')
-    monthly_avg = time_df.resample('M').mean(numeric_only=True)
+    monthly_avg = time_df.resample('ME').mean(numeric_only=True)
     
     fig = px.line(monthly_avg, x=monthly_avg.index, y=['resilience_score', 'stress_levels'],
                  title='Monthly Average Resilience Score and Stress Levels',
